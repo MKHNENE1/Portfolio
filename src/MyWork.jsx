@@ -119,13 +119,33 @@ const MyWork = () => {
       <Grid container spacing={4}>
         {worksData.map((work, index) => (
           <Grid item xs={12} sm={6} md={6} key={index}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="400"
-                image={work?.image}
-                alt={work?.title}
-              />
+            <Card
+              sx={{
+                borderRadius: "25px",
+                "&:hover .CardMedia": {
+                  transform: "scale(1.1)",
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  mx: 2.5,
+                  mt: 2.5,
+                  borderRadius: "15px",
+                  overflow: "hidden",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="500"
+                  image={work?.image}
+                  className="CardMedia"
+                  alt={work?.title}
+                  sx={{
+                    transition: "0.7s ease",
+                  }}
+                />
+              </Box>
               <CardContent>
                 <Typography
                   variant="h6"
