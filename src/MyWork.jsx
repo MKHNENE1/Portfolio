@@ -42,7 +42,14 @@ const MyWork = () => {
 
   return (
     <Container sx={{ py: 4 }}>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 2,
+        }}
+      >
         <Typography
           variant="h3"
           gutterBottom
@@ -104,7 +111,6 @@ const MyWork = () => {
               fontWeight: "bold",
               color: "#bbbaa6",
               minWidth: 90,
-              mr: 3,
               borderColor: "#bbbaa6",
               "&:hover": {
                 borderColor: "#bbbaa6",
