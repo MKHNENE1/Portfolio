@@ -5,6 +5,7 @@ const theme = createTheme({
     mode: "dark",
     primary: {
       main: "#121212",
+      sides: "#0e0f0f",
       box: "#141514",
       test: "#bbbaa6",
       customText: {

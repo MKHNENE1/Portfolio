@@ -38,13 +38,12 @@ const worksData = [
 ];
 
 const MyWork = () => {
-  // const theme = useTheme();
-
   return (
     <Container sx={{ py: 4 }}>
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
           alignItems: "center",
           mb: 2,
@@ -53,73 +52,58 @@ const MyWork = () => {
         <Typography
           variant="h3"
           gutterBottom
-          sx={{ color: theme.palette.primary.customText }}
+          sx={{
+            color: theme.palette.primary.customText,
+            fontSize: { xs: "h4.fontSize", md: "h3.fontSize" },
+          }}
         >
           Works
         </Typography>
-        <Box>
-          <CustomButton sx={{ minWidth: 90, mr: 3, padding: "5px 20px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 3,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: { xs: 2, sm: 0 },
+          }}
+        >
+          <CustomButton
+            sx={{
+              minWidth: 90,
+              mb: { xs: 1, sm: 0 },
+              mr: { sm: 3 },
+              padding: "5px 20px",
+            }}
+          >
             All
           </CustomButton>
-          <Button
-            variant="outlined"
-            sx={{
-              borderRadius: "50px",
-              padding: "5px 20px",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "#bbbaa6",
-              minWidth: 90,
-              mr: 3,
-              borderColor: "#bbbaa6",
-              "&:hover": {
+          {["Branding", "Product", "UX/UI"].map((label, index) => (
+            <Button
+              key={index}
+              variant="outlined"
+              sx={{
+                borderRadius: "50px",
+                padding: "5px 20px",
+                textTransform: "none",
+                fontSize: "16px",
+                fontWeight: "bold",
+                color: "#bbbaa6",
+                minWidth: 90,
+                mb: { xs: 1, sm: 0 },
+                mr: { sm: 2 },
                 borderColor: "#bbbaa6",
-                color: "white",
-              },
-            }}
-          >
-            Branding
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              borderRadius: "50px",
-              padding: "5px 20px",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "#bbbaa6",
-              minWidth: 90,
-              mr: 3,
-              borderColor: "#bbbaa6",
-              "&:hover": {
-                borderColor: "#bbbaa6",
-                color: "white",
-              },
-            }}
-          >
-            Product
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              borderRadius: "50px",
-              padding: "5px 20px",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              color: "#bbbaa6",
-              minWidth: 90,
-              borderColor: "#bbbaa6",
-              "&:hover": {
-                borderColor: "#bbbaa6",
-                color: "white",
-              },
-            }}
-          >
-            UX/UI
-          </Button>
+                "&:hover": {
+                  borderColor: "#bbbaa6",
+                  color: "white",
+                },
+              }}
+            >
+              {label}
+            </Button>
+          ))}
         </Box>
       </Box>
       <Grid container spacing={4}>

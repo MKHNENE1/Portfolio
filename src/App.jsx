@@ -1,21 +1,20 @@
-/* eslint-disable no-unused-vars */
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import MyWork from "./MyWork";
 import Contact from "./Contact";
+import Hero from "./Hero";
 import { CssBaseline } from "@mui/material";
-import Button from "@mui/material/Button";
+import CustomAppBar from "./Header";
+import Footer from "./Footer";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <>
       <CssBaseline />
+      <CustomAppBar></CustomAppBar>
+      <Hero></Hero>
       <MyWork></MyWork>
       <Contact></Contact>
+      <Footer></Footer>
     </>
   );
 }
